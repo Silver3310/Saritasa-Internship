@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/comparison_data_structures.py" line="50" />
-    <bookmark url="file://$PROJECT_DIR$/comparison_data_structures.py" line="215" />
+    <bookmark url="file://$PROJECT_DIR$/Day_1/comparison_data_structures.py" line="50" />
+    <bookmark url="file://$PROJECT_DIR$/Day_1/comparison_data_structures.py" line="215" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7d1e1f33-0586-4217-87a2-30346b01b3bb" name="Default" comment="" />
@@ -16,7 +16,7 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="comparison_data_structures.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/comparison_data_structures.py">
+        <entry file="file://$PROJECT_DIR$/Day_1/comparison_data_structures.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="315">
               <caret line="21" column="21" lean-forward="true" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
@@ -28,7 +28,7 @@
         </entry>
       </file>
       <file leaf-file-name="transliteration.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/transliteration.py">
+        <entry file="file://$PROJECT_DIR$/Day_1/transliteration.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="488">
               <caret line="61" lean-forward="true" selection-start-line="61" selection-end-line="61" />
@@ -37,7 +37,7 @@
         </entry>
       </file>
       <file leaf-file-name="counter.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/counter.py">
+        <entry file="file://$PROJECT_DIR$/Day_1/counter.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="420">
               <caret line="28" column="46" selection-start-line="28" selection-start-column="46" selection-end-line="28" selection-end-column="46" />
@@ -46,7 +46,7 @@
         </entry>
       </file>
       <file leaf-file-name="duplicate_keys.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/duplicate_keys.py">
+        <entry file="file://$PROJECT_DIR$/Day_1/duplicate_keys.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="255">
               <caret line="17" column="55" lean-forward="true" selection-start-line="17" selection-start-column="55" selection-end-line="17" selection-end-column="55" />
@@ -96,6 +96,11 @@
             <path>
               <item name="Day1" type="b2602c69:ProjectViewProjectNode" />
               <item name="Day1" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Day1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Day1" type="462c0819:PsiDirectoryNode" />
+              <item name="Day_1" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -223,14 +228,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-3" y="0" width="1922" height="1047" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25052193" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25052193" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50104386" side_tool="true" visible="true" weight="0.33085898" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Python Console" order="7" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49895614" visible="true" weight="0.33085898" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49895614" visible="true" weight="0.33085898" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -256,7 +260,7 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/comparison_data_structures.py">
+    <entry file="file://$PROJECT_DIR$/Day_1/comparison_data_structures.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1440">
           <caret line="100" column="18" lean-forward="true" selection-start-line="100" selection-start-column="18" selection-end-line="100" selection-end-column="18" />
@@ -266,7 +270,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/comparison_data_structures.py">
+    <entry file="file://$PROJECT_DIR$/Day_1/comparison_data_structures.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
           <caret line="21" column="21" lean-forward="true" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
@@ -276,21 +280,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/transliteration.py">
+    <entry file="file://$PROJECT_DIR$/Day_1/transliteration.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="488">
           <caret line="61" lean-forward="true" selection-start-line="61" selection-end-line="61" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/counter.py">
+    <entry file="file://$PROJECT_DIR$/Day_1/counter.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
           <caret line="28" column="46" selection-start-line="28" selection-start-column="46" selection-end-line="28" selection-end-column="46" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/duplicate_keys.py">
+    <entry file="file://$PROJECT_DIR$/Day_1/duplicate_keys.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="17" column="55" lean-forward="true" selection-start-line="17" selection-start-column="55" selection-end-line="17" selection-end-column="55" />
