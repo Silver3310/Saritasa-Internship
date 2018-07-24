@@ -29,7 +29,7 @@ transl = dict(j='й',
 
 # get a string from a user
 string = input()
-transl_string = ''
+transl_string = []
 # flag is need for the case if a user type non-russian letter such as )!?., etc
 flag = False
 
@@ -37,7 +37,7 @@ for char in string:
     flag = True
     # if it's empty
     if char == ' ':
-        transl_string += ' '
+        transl_string.append(' ')
         continue
     if char == 'ь' or char == 'ъ':
         continue
@@ -48,14 +48,14 @@ for char in string:
             # if the letter is capital
             if char.isupper():
                 # we use the capital too
-                transl_string += eng.upper()
+                transl_string.append(eng.upper())
             else:
-                transl_string += eng
+                transl_string.append(eng)
             flag = False
             continue
     # if flag is false then there wasn't a satisfied condition, then it's an unknown symbol, so we just add it
     if flag:
-        transl_string += char
+        transl_string.append(char)
 
 # output the result
-print(transl_string)
+print(''.join(transl_string))
