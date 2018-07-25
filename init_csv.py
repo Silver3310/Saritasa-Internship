@@ -7,12 +7,16 @@ def init_csv_file(source):
         # here we specify the field names of our records
         field_names = ['name', 'success', 'email']
         writer = csv.DictWriter(csv_file, fieldnames=field_names)
-        # the first row will be the names of the fields in order to make it clear
+        # the first row will be the names of the fields
+        #  in order to make it clear
         # what the following rows mean
-        writer.writerow({'name': 'name', 'success': 'success', 'email': 'email'})
+        writer.writerow({'name': 'name', 'success': 'success',
+                         'email': 'email'})
         # the following rows
         for i in range(10000):
-            writer.writerow({'name': source.name(), 'success': source.boolean(), 'email': source.email()})
+            writer.writerow({'name': source.name(),
+                             'success': source.boolean(),
+                             'email': source.email()})
 
 
 def main():
@@ -22,6 +26,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
-
-

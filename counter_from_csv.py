@@ -1,4 +1,5 @@
-import csv, argparse
+import csv
+import argparse
 from collections import defaultdict
 
 
@@ -30,23 +31,26 @@ def list_counter(records):
 
     # in this part we count the same values of keys
 
-    # we use defaultdict(dict) as it uses the default value (which is dict, the empty dict) if it
-    # encounters an unknown value
+    # we use defaultdict(dict) as it uses the default value (which is dict,
+    # the empty dict) if it encounters an unknown value
     result = defaultdict(dict)
     # for each record
     for each in records:
         # for each key
         for k in records[0].keys():
             try:
-                # each[k] - the value of the particular key, we're about to increment it
+                # each[k] - the value of the particular key,
+                #  we're about to increment it
                 result[k][each[k]] += 1
             except KeyError:
                 # or to create it :)
                 result[k][each[k]] = 1
-    # as a result we'll get sth like {{success: {True: 5000, False: 5000}}, {{name: {alex: 1, john: 3...
+    # as a result we'll get sth like {{success: {True: 5000,
+    #  False: 5000}}, {{name: {alex: 1, john: 3...
 
     # creating the final list
-    # now we need to meet the requirements of how the counter list should look like
+    # now we need to meet the requirements of how the counter
+    # list should look like
     # let's create an empty list list
     c_list = list()
     for key, v in result.items():
