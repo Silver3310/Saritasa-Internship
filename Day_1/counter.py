@@ -18,16 +18,21 @@ def counter(records_list, key, value):
     return dict(key=key, value=value, count=count)
 
 
+def counters_list(records_list):
+    c_list = list()
+    c_list.append(counter(records_list, 'success', True))
+    c_list.append(counter(records_list, 'success', False))
+    for name in names_list:
+        c_list.append(counter(records_list, 'name', name))
+    return c_list
+
+
 def main():
     record_list = []
     init_records(record_list)
     print(record_list)
 
-    count = counter(record_list, 'success', True)
-    print(count)
-
-    count = counter(record_list, 'name', 'Kate')
-    print(count)
+    print(counters_list(record_list))
 
 
 if __name__ == "__main__":
