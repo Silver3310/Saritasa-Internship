@@ -1,3 +1,6 @@
+venv/
+.idea/*.xml
+.idea/*.iml
 *.pyc
 *.xml
 *.iws
