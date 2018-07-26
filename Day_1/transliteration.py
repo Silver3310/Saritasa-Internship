@@ -95,15 +95,16 @@ def make_transl(string):
         if flag:
             transl_string.append(char)
 
-    # output the result
-    print(''.join(transl_string))
+    # return the result
+    return ''.join(transl_string)
 
 
 def main():
     print("Enter the phrase to transliterate:")
     # get a string from a user
     string = input()
-    make_transl(string)
+    result = make_transl(string)
+    print(result)
 
 
 if __name__ == '__main__':
