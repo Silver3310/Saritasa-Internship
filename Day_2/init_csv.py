@@ -13,7 +13,7 @@ def init_csv_file(source):
         writer.writerow({'name': 'name', 'success': 'success',
                          'email': 'email'})
         # the following rows
-        for _ in range(10000):
+        for _ in range(100):
             writer.writerow({'name': source.name(),
                              'success': source.boolean(),
                              'email': source.email()})
