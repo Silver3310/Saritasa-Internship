@@ -81,12 +81,12 @@ def make_transl(string):
                     # if the letter is capital
                     if char.isupper():
                         # we use the capital too
-                        transl_string.append(lng2.upper()) if \
-                            isinstance(lng2, str) else \
-                            transl_string.append(lng2[0].upper())
+                        transl_string.append(
+                            lng2.upper() if isinstance(lng2, str)
+                            else lng2[0].upper())
                     else:
-                        transl_string.append(lng2) if isinstance(lng2, str)\
-                            else transl_string.append(lng2[0])
+                        transl_string.append(
+                            lng2 if isinstance(lng2, str) else lng2[0])
                     flag = False
                     break
 

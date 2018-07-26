@@ -1,4 +1,4 @@
-from random import randint, choice
+from random import choice
 
 names_list = ['Laura', 'Alex', 'Anna', 'Kate', 'John', 'Jake', 'Peter', 'Mary']
 
@@ -6,7 +6,7 @@ names_list = ['Laura', 'Alex', 'Anna', 'Kate', 'John', 'Jake', 'Peter', 'Mary']
 def init_records(record_list):
     for i in range(1000):
         record_list.append(dict(id=i,
-                                success=True if randint(0, 1) == 0 else False,
+                                success=choice([True, False]),
                                 name=choice(names_list)))
 
 
