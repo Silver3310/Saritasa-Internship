@@ -1,13 +1,13 @@
-from random import randint
+from random import randint, choice
 
-names_list = ['Laura', 'Alex', 'Anna', 'Kate', 'John', 'Harry', 'Peter', 'Mary']
+names_list = ['Laura', 'Alex', 'Anna', 'Kate', 'John', 'Jake', 'Peter', 'Mary']
 
 
-def init_records(records_list):
-    i = 0
-    while i < 1000:
-        records_list.append(dict(id=i, success=True if randint(0,1) == 0 else False, name=names_list[randint(0, 7)]))
-        i += 1
+def init_records(record_list):
+    for i in range(1000):
+        record_list.append(dict(id=i,
+                                success=True if randint(0, 1) == 0 else False,
+                                name=choice(names_list)))
 
 
 def counter(records_list, key, value):
