@@ -16,14 +16,23 @@ Example:
 
 from random import choice
 
-names_list = ['Lucy', 'Alex', 'Anna', 'Kate', 'John', 'Jake', 'Peter', 'Mary']
+names_list = [
+    'Lucy',
+    'Alex',
+    'Anna',
+    'Kate',
+    'John',
+    'Jake',
+    'Peter',
+    'Mary'
+]
 
 
 def init_records(record_list):
     """This function fills the empty record list with random values
 
     Args:
-        record_list (list): an empty list
+        record_list (list): an empty list.
 
     """
     for i in range(1000):
@@ -39,14 +48,18 @@ def counter(records_list, key, value):
     counting records that have the key with a given value
 
     Returns:
-        a counter dict, e.g.{'key': 'success', 'value': True, 'count': 476}
+        a counter dict, e.g.{'key': 'success', 'value': True, 'count': 476}.
 
     """
     count = 0
     for each in records_list:
         if each[key] == value:
             count += 1
-    return dict(key=key, value=value, count=count)
+    return dict(
+        key=key,
+        value=value,
+        count=count
+    )
 
 
 def counters_list(records_list):
@@ -57,10 +70,28 @@ def counters_list(records_list):
 
     """
     c_list = list()
-    c_list.append(counter(records_list, 'success', True))
-    c_list.append(counter(records_list, 'success', False))
+    c_list.append(
+        counter(
+            records_list,
+            'success',
+            True
+        )
+    )
+    c_list.append(
+        counter(
+            records_list,
+            'success',
+            False
+        )
+    )
     for name in names_list:
-        c_list.append(counter(records_list, 'name', name))
+        c_list.append(
+            counter(
+                records_list,
+                'name',
+                name
+            )
+        )
     return c_list
 
 
@@ -69,7 +100,11 @@ def main():
     init_records(record_list)
     print(record_list)
 
-    print(counters_list(record_list))
+    print(
+        counters_list(
+            record_list
+        )
+    )
 
 
 if __name__ == "__main__":

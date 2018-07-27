@@ -1,3 +1,18 @@
+# -*- coding: utf-8 -*-
+"""Comparison of data structures
+
+This module demonstrates how much memory does each data structure take to
+store its data and how fast they are. This method doesn't require any input
+data, all values are randomly created.
+
+Firstly, we check how much memory does one instance take of each data
+structure.
+
+Secondly we take 3000 instances and check how long does it take to
+search for an element in each data structure and create a data structure
+itself and how much does it need to store its elements.
+"""
+
 from time import time
 from sys import getsizeof
 from collections import namedtuple, OrderedDict
@@ -5,8 +20,10 @@ from datetime import date
 from faker import Faker
 
 # declaration of namedtuple
-named_tuple = namedtuple('named_tuple', ['id', 'name', 'start_date',
-                                         'end_date', 'description'])
+named_tuple = namedtuple(
+    'named_tuple',
+    ['id', 'name', 'start_date', 'end_date', 'description']
+)
 
 # sample data for each data structure
 fake = Faker()
@@ -17,14 +34,26 @@ end_date = date(2018, 7, 30)
 description = 'a good person'
 
 # creating a list that contains all data structures with the same data
-comparison = [named_tuple(id, name, start_date, end_date, description),
-              (id, name, start_date, end_date, description),
-              dict(id=id, name=name, start_date=start_date,
-                   end_date=end_date, description=description),
-              [id, name, start_date, end_date, description],
-              OrderedDict(id=id, name=name, start_date=start_date,
-                          end_date=end_date, description=description),
-              {id, name, start_date, end_date, description}]
+comparison = [
+    named_tuple(id, name, start_date, end_date, description),
+    (id, name, start_date, end_date, description),
+    dict(
+      id=id,
+      name=name,
+      start_date=start_date,
+      end_date=end_date,
+      description=description
+    ),
+    [id, name, start_date, end_date, description],
+    OrderedDict(
+      id=id,
+      name=name,
+      start_date=start_date,
+      end_date=end_date,
+      description=description
+    ),
+    {id, name, start_date, end_date, description}
+]
 
 # comparison the data structures based on one instance
 print("How much memory one instance takes:")
@@ -36,6 +65,20 @@ for each in comparison:
 # creating, searching and how much memory
 # it needs
 def time_estimating(func):
+    """The function for estimating a period of time
+
+    This function consists of several parts, each part is
+    for a particular type of data structure (for dict and OrderedDict
+    is the same)
+
+    Inside these parts, we measure time it needs to create itself
+    and time it needs to search for the last element (because only
+    the last element has 'marty' name)
+
+    Args:
+         func - the function itself.
+
+    """
 
     # default values
     n = 0
@@ -56,8 +99,15 @@ def time_estimating(func):
         start_time = time()
         # fill with random records
         while n < 3000:
-            elements.append([n, fake.name(), fake.date(), fake.date(),
-                             fake.text()])
+            elements.append(
+                [
+                    n,
+                    fake.name(),
+                    fake.date(),
+                    fake.date(),
+                    fake.text()
+                ]
+            )
             n += 1
         # stop stopwatch
         end_time = time()
@@ -80,8 +130,13 @@ def time_estimating(func):
         # start stopwatch
         start_time = time()
         while n < 3000:
-            elements[n] = func(id=n, name=fake.name(), start_date=fake.date(),
-                               end_date=fake.date(), description=fake.text())
+            elements[n] = func(
+                id=n,
+                name=fake.name(),
+                start_date=fake.date(),
+                end_date=fake.date(),
+                description=fake.text()
+            )
             n += 1
         # stop stopwatch
         end_time = time()
@@ -105,11 +160,25 @@ def time_estimating(func):
         # start stopwatch
         start_time = time()
         while n < 2999:
-            elements.append((n, fake.name(), fake.date(), fake.date(),
-                             fake.text()))
+            elements.append(
+                (
+                    n,
+                    fake.name(),
+                    fake.date(),
+                    fake.date(),
+                    fake.text()
+                )
+            )
             n += 1
-        elements.append((n, search_name, fake.date(), fake.date(),
-                         fake.text()))
+        elements.append(
+            (
+                n,
+                search_name,
+                fake.date(),
+                fake.date(),
+                fake.text()
+            )
+        )
         # turn a list into a tuple
         elements = tuple(elements)
         # stop stopwatch
@@ -131,10 +200,25 @@ def time_estimating(func):
         # start stopwatch
         start_time = time()
         while n < 2999:
-            elements.add((n, fake.name(), fake.date(), fake.date(),
-                          fake.text()))
+            elements.add(
+                (
+                    n,
+                    fake.name(),
+                    fake.date(),
+                    fake.date(),
+                    fake.text()
+                )
+            )
             n += 1
-        elements.add((n, search_name, fake.date(), fake.date(), fake.text()))
+        elements.add(
+            (
+                n,
+                search_name,
+                fake.date(),
+                fake.date(),
+                fake.text()
+            )
+        )
         # stop stopwatch
         end_time = time()
 
@@ -153,11 +237,25 @@ def time_estimating(func):
         # start stopwatch
         start_time = time()
         while n < 2999:
-            elements.append(func(n, fake.name(), fake.date(), fake.date(),
-                                 fake.text()))
+            elements.append(
+                func(
+                    n,
+                    fake.name(),
+                    fake.date(),
+                    fake.date(),
+                    fake.text()
+                )
+            )
             n += 1
-        elements.append(func(n, search_name, fake.date(), fake.date(),
-                             fake.text()))
+        elements.append(
+            func(
+                n,
+                search_name,
+                fake.date(),
+                fake.date(),
+                fake.text()
+            )
+        )
         elements = tuple(elements)
         # stop stopwatch
         end_time = time()
@@ -172,10 +270,14 @@ def time_estimating(func):
         size = getsizeof(elements)
 
     # output the results
-    print('{0}: The process of creating took {1:.3} seconds and process'
-          ' of searching took {2:.3}, size: {3}'.format(
-            func.__name__, end_time - start_time, end_time_s - start_time_s,
-            size))
+    print(
+        '{0}: The process of creating took {1:.3} seconds and process'
+        ' of searching took {2:.3}, size: {3}'.format(
+            func.__name__,
+            end_time - start_time,
+            end_time_s - start_time_s,
+            size)
+    )
 
 
 print()
@@ -188,6 +290,8 @@ time_estimating(OrderedDict)
 time_estimating(set)
 
 print()
-print("As we see, when we created one instance, 'set' took the most memory\n"
-      "When we created 3000 instances, 'OrderedDict' took the most memory\n"
-      "Searching was quite fast for 'tuple' and 'list'")
+print(
+    "As we see, when we created one instance, 'set' took the most memory\n"
+    "When we created 3000 instances, 'OrderedDict' took the most memory\n"
+    "Searching was quite fast for 'tuple' and 'list'"
+)
