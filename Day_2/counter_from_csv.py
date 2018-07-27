@@ -31,6 +31,9 @@ def list_counter(records):
 
     # in this part we count the same values of keys
 
+    # if records is not a list
+    if not isinstance(records, list):
+        raise TypeError
     # we use defaultdict(dict) as it uses the default value (which is dict,
     # the empty dict) if it encounters an unknown value
     result = defaultdict(dict)
@@ -59,7 +62,7 @@ def list_counter(records):
             # e.g. value[0] = True, value[1] = 5000
             c_list.append(dict(key=key, value=value[0], counter=value[1]))
             # so we have sth like {key=success, value=True, counter=5000}
-    print(c_list)
+    return c_list
 
 
 def main():
@@ -69,7 +72,8 @@ def main():
     # make the list of records that are contained in the input file
     records = dict_to_count(file_name)
     # make a counter list based on the records
-    list_counter(records)
+    result = list_counter(records)
+    print(result)
 
 
 if __name__ == '__main__':
