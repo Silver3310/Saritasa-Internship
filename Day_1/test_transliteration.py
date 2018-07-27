@@ -24,7 +24,7 @@ class TestMakeTransl(unittest.TestCase):
 
     def test_ru_to_en(self):
         self.assertEqual(
-            make_transl('привет'),
+            make_transl('приветь'),
             'privet'
         )
         self.assertEqual(

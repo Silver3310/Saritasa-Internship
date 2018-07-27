@@ -34,10 +34,8 @@ def check_and_insert(input_, sample_record):
     """
     # replace the braces to make it suitable for being a Template
     input_ = input_.replace('{', '${')
-    # make our input and input_template
+    # make our input an input_template
     input_template = Template(input_)
-    # is our template invalid?
-    invalid = False
 
     try:
         # parse all the keys from input_ like {name} => ['name']
@@ -47,20 +45,14 @@ def check_and_insert(input_, sample_record):
         print(e)
         return 'Your template is invalid'
 
-    sample_record_keys = sample_record.keys()
-
-    # he we compare keys that a user has typed and are in our sample
-    for key in input_keys:
-        # 'if key' is needed as input_keys may contain None value when it
-        # encounters some string at the end
-        if key and key not in sample_record_keys:
-            print(f"There is no '{key}' key")
-            invalid = True
-
-    if invalid:
+    # check if keys that a user typed are the same as in our record
+    if not set(input_keys).issubset(set(sample_record.keys())):
+        # for each key that is in input_keys but not in sample keys
+        for each in set(input_keys).difference(set(sample_record.keys())):
+            print(f"There is no '{each}' key")
         return 'Your template is invalid'
-    else:
-        return input_template.substitute(sample_record)
+
+    return input_template.substitute(sample_record)
 
 
 def main():

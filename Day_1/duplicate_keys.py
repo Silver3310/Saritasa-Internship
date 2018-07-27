@@ -24,10 +24,6 @@ import warnings
 def merge_dict(dict1, dict2):
     """The function for merging dict1 and dict2
 
-    Args:
-        dict1 (dict): the first dict.
-        dict2 (dict): the second dict.
-
     Returns:
         dict: new dictionary based on the first one.
 

@@ -1,4 +1,4 @@
 #!/bin/bash
 flake8
-python -m unittest
-
+coverage run -m unittest discover Day_1
+coverage run -m unittest discover Day_2

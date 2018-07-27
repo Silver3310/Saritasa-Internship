@@ -105,6 +105,7 @@ def make_transl(string):
             transl_string.append(' ')
             continue
         if char == 'ь' or char == 'ъ':
+            transl_string.append('')
             continue
         if russian:
             # iterating over a sorted dictionary (as a dict is an unordered
