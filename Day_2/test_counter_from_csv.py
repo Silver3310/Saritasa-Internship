@@ -1,5 +1,5 @@
 import unittest
-from counter_from_csv import list_counter
+from .counter_from_csv import list_counter
 
 
 class TestListCounter(unittest.TestCase):

@@ -1,5 +1,5 @@
 import unittest
-from custom_format import check_and_insert
+from .custom_format import check_and_insert
 
 
 class TestCheckAndInsert(unittest.TestCase):

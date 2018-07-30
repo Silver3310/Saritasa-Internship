@@ -1,5 +1,5 @@
 import unittest
-from transliteration import make_transl, is_rus
+from .transliteration import make_transl, is_rus
 
 
 class TestMakeTransl(unittest.TestCase):

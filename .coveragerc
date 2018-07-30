@@ -1,0 +1,7 @@
+# .coveragerc to control coverage.py
+[run]
+omit = 
+	# omit unit test files
+	*test_*.py
+	# omit __init__.py files
+	*__init__.py

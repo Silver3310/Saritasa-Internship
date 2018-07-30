@@ -1,0 +1,6 @@
+#!/bin/sh
+
+# check the coverage of code and update results on codacy
+coverage run -m unittest discover
+coverage xml
+python-codacy-coverage -r coverage.xml
