@@ -22,24 +22,11 @@ Example:
 class Chain:
     def __init__(self, *args):
         self.i = 0
-        self.common_list = []
-        # here we put all the elements from args into our common list
-        for iter_ in args:
-            for i in iter_:
-                self.common_list.append(i)
-        # get the size of the created list
-        self.size = len(self.common_list)
+        self.args = args
 
     def __iter__(self):
-        return self
-
-    def __next__(self):
-        if self.i < self.size:
-            i = self.i
-            self.i += 1
-            return self.common_list[i]
-        else:
-            raise StopIteration
+        for i in range(len(self.args)):
+            yield from chain_gen(self.args[i])
 
 
 def chain_gen(*args):

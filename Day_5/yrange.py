@@ -37,8 +37,10 @@ def yrange_gen(n):
     i = 0
     while i < n:
         yield i
-        i += 1
-    yield from yrange_gen(n)
+        if i + 1 == n:
+            i = 0
+        else:
+            i += 1
 
 
 def yrange_gen_test(n, amount):
@@ -68,7 +70,7 @@ def yrange_iter_test(n, amount):
 
 
 def main():
-    pass
+    print(yrange_gen_test(4, 10))
 
 
 if __name__ == '__main__':

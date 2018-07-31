@@ -11,9 +11,10 @@ Example:
 """
 
 
-def reverse_gen(items_list):
+def reverse_gen(items):
     """The generator that defines what to send and when to stop"""
     i = 0
+    items_list = list(items)
     size = len(items_list)
     while i < size:
         i += 1
@@ -27,14 +28,14 @@ def reverse_iter(items_list):
     This function is necessary to access all the elements at once
 
     """
-    if not isinstance(items_list, list):
-        raise TypeError
 
     return list(reverse_gen(items_list))
 
 
 def main():
-    pass
+    print(reverse_iter('string'))
+    b = (i ** 2 for i in range(5))
+    print(reverse_iter(list(b)))
 
 
 if __name__ == '__main__':

@@ -10,13 +10,6 @@ class TestReverseIter(unittest.TestCase):
             [43, 4, 1, 189, 59, 14, 4, 3, 2, 1]
         )
 
-    def test_invalid(self):
-        self.assertRaises(
-            TypeError,
-            reverse_iter,
-            'sample string'
-        )
-
 
 if __name__ == '__main__':
     unittest.main()
