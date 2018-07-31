@@ -48,21 +48,7 @@ def integers():
 
 
 def main():
-    i1 = integers()
-    print(next(i1))
-    print(next(i1))
-    print(next(i1))
-
-    i2 = integers()
-    print(next(i2))
-    print(next(i2))
-    print(next(i2))
-    print(next(i2))
-
-    i3 = integers()
-    print(next(i3))
-    print(next(i3))
-    print(next(i3))
+    pass
 
 
 if __name__ == '__main__':

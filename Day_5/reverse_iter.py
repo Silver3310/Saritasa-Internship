@@ -27,12 +27,14 @@ def reverse_iter(items_list):
     This function is necessary to access all the elements at once
 
     """
+    if not isinstance(items_list, list):
+        raise TypeError
+
     return list(reverse_gen(items_list))
 
 
 def main():
-    it = reverse_iter([1, 2, 3, 4, 5, 18, 20, 50, 8])
-    print(it)
+    pass
 
 
 if __name__ == '__main__':

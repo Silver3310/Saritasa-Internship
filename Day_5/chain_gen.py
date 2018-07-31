@@ -49,16 +49,7 @@ def chain_gen(*args):
 
 
 def main():
-    a = ['a', 'b', 'c']
-    b = (i ** 2 for i in range(5))
-    c = range(10)
-    d = chain_gen(a, b, c)
-    print(list(d))
-
-    # recreating a dictionary (since it was exhausted above)
-    b = (i ** 2 for i in range(5))
-    e = Chain(a, b, c)
-    print(list(e))
+    pass
 
 
 if __name__ == '__main__':
