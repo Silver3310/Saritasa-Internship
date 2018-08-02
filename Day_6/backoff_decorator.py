@@ -25,7 +25,7 @@ def backoff(exceptions, max_retry_count=3, delay=0):
         def retry_func(*args):
             """The function that retries the given function"""
             # for the specified amount of times
-            for i in range(max_retry_count):
+            for _ in range(max_retry_count):
                 try:
                     func(*args)
                     print("the function didn't raise any given exception")
