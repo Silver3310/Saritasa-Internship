@@ -44,10 +44,11 @@ def yrange_gen(n):
 
 
 def yrange_gen_test(n, amount):
+    """The function for testing the generator"""
+
     if amount < 0:
         raise AttributeError("Amount must be positive")
 
-    """The function for testing the generator"""
     print("Yrange generator:")
     yrange_g = yrange_gen(n)
     result = list()
@@ -57,10 +58,11 @@ def yrange_gen_test(n, amount):
 
 
 def yrange_iter_test(n, amount):
+    """The function for testing the iterator"""
+
     if amount < 0:
         raise AttributeError("Amount must be positive")
 
-    """The function for testing the iterator"""
     print("Yrange iterator:")
     yrange_iter = YrangeIter(n)
     result = list()
