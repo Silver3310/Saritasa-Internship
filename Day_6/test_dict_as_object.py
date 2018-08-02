@@ -1,5 +1,5 @@
 import unittest
-from .dict_as_object import DictFactory
+from .dict_as_object import DictAsClass
 
 
 class TestDict(unittest.TestCase):
@@ -19,33 +19,10 @@ class TestDict(unittest.TestCase):
             }
     }
 
-    def test_read_property_true(self):
-
-        ball = DictFactory(
-            self.ball_dict,
-            read=True
-        )
-
-        self.assertEqual(
-            str(ball.material.flash.first),
-            '11'
-        )
-
-    def test_read_property_false(self):
-
-        ball = DictFactory(
-            self.ball_dict,
-            read=False
-        )
-
-        with self.assertRaises(AttributeError):
-            print(ball.material.flash.first)
-
     def test_delete_property_true(self):
 
-        ball = DictFactory(
+        ball = DictAsClass(
             self.ball_dict,
-            read=True,
             delete=True
         )
 
@@ -56,9 +33,8 @@ class TestDict(unittest.TestCase):
 
     def test_delete_property_false(self):
 
-        ball = DictFactory(
+        ball = DictAsClass(
             self.ball_dict,
-            read=True,
             delete=False
         )
 
@@ -67,9 +43,8 @@ class TestDict(unittest.TestCase):
 
     def test_add_property_true(self):
 
-        ball = DictFactory(
+        ball = DictAsClass(
             self.ball_dict,
-            read=True,
             add=True
         )
 
@@ -82,9 +57,8 @@ class TestDict(unittest.TestCase):
 
     def test_add_property_false(self):
 
-        ball = DictFactory(
+        ball = DictAsClass(
             self.ball_dict,
-            read=True,
             add=False
         )
 
@@ -93,9 +67,8 @@ class TestDict(unittest.TestCase):
 
     def test_change_property_true(self):
 
-        ball = DictFactory(
+        ball = DictAsClass(
             self.ball_dict,
-            read=True,
             change=True
         )
 
@@ -103,9 +76,8 @@ class TestDict(unittest.TestCase):
 
     def test_change_property_false(self):
 
-        ball = DictFactory(
+        ball = DictAsClass(
             self.ball_dict,
-            read=True,
             change=False
         )
 
@@ -114,21 +86,19 @@ class TestDict(unittest.TestCase):
 
     def test_print_several_values(self):
 
-        ball = DictFactory(
+        ball = DictAsClass(
             self.ball_dict,
-            read=True,
         )
 
         self.assertEqual(
             str(ball.material),
-            '|rubber, flash|'
+            'rubber, flash'
         )
 
     def test_print_list(self):
 
-        ball = DictFactory(
+        ball = DictAsClass(
             self.ball_dict,
-            read=True,
             add=True
         )
 
@@ -137,22 +107,6 @@ class TestDict(unittest.TestCase):
         self.assertEqual(
             str(ball.key),
             "['attr1', 'attr2']"
-        )
-
-    def test_print_default_with_keys(self):
-
-        ball = DictFactory(
-            self.ball_dict,
-            read=True,
-            add=True
-        )
-
-        ball.key = 2
-        ball.key.new_key = 3
-
-        self.assertEqual(
-            str(ball.key),
-            '|new_key, 2|'
         )
 
 
