@@ -51,13 +51,13 @@ class TestMatrix(unittest.TestCase):
 
     def test_multiplying(self):
 
-        self.x * 4
+        t = self.x * 8
 
         self.assertEqual(
-            self.x.matrix_list,
+            t.matrix_list,
             [
                 [0, 8],
-                [8, 64]
+                [8, 16]
             ]
         )
 
@@ -66,10 +66,10 @@ class TestMatrix(unittest.TestCase):
         y = -self.x
 
         self.assertEqual(
-            y,
+            y.matrix_list,
             [
-                [0, -2],
-                [-2, -4]
+                [0, -1],
+                [-1, -2]
             ]
         )
 
@@ -78,24 +78,93 @@ class TestMatrix(unittest.TestCase):
         y = self.x ** 2
 
         self.assertEqual(
-            y,
+            y.matrix_list,
             [
-                [4, 8],
-                [8, 20]
+                [1, 2],
+                [2, 5]
             ]
         )
 
     def test_transposing(self):
 
-        y = [
-            [1, 2],
-            [3, 4]
-        ]
+        y = Matrix(
+            [
+                [1, 2],
+                [3, 4]
+            ]
+        )
+
+        y = y.T()
 
         self.assertEqual(
-            y,
+            y.matrix_list,
             [
                 [1, 3],
                 [2, 4]
             ]
         )
+
+    def test_transposing_dif_sizes(self):
+
+        y = Matrix(
+            [
+                [1, 2],
+                [3, 4],
+                [5, 6]
+            ]
+        )
+
+        y = y.T()
+
+        self.assertEqual(
+            y.matrix_list,
+            [
+                [1, 3, 5],
+                [2, 4, 6]
+            ]
+        )
+
+    def test_multiplying_dif_sizes(self):
+
+        t = Matrix(
+            [
+                [2, 3],
+                [4, 8],
+                [1, 2]
+            ]
+        )
+
+        t = t * 2
+
+        self.assertEqual(
+            t.matrix_list,
+            [
+                [4, 6],
+                [8, 16],
+                [2, 4]
+            ]
+        )
+
+    def test_multiplying_inplace(self):
+
+        t = Matrix(
+            [
+                [0, 1],
+                [1, 2]
+            ]
+        )
+
+        t *= 8
+
+        self.assertEqual(
+            t.matrix_list,
+            [
+                [0, 8],
+                [8, 16]
+            ]
+        )
+
+
+if __name__ == '__main__':
+    unittest.main()
+
